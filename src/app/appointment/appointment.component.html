@@ -1,0 +1,78 @@
+<h1>New Appointment</h1>
+
+    <p>Search</p>
+
+<div *ngIf="msg"  class="alert alert-success" role="alert">
+  {{msg}} <a href="#" class="alert-link"></a>
+</div>
+
+
+<form>
+    <div class="mb-3">
+        
+      <input type="text" [formControl]="name" class="form-control" id="exampleInputEmail1"placeholder="Enter Name you want to search">
+      <input type="text" [formControl]="location" class="form-control" id="exampleInputEmail1"placeholder="or enter location you want to search">
+      <input type="text" [formControl]="speciality" class="form-control" id="exampleInputEmail1"placeholder="or enter speciality you want to search">
+
+    </div>
+    
+      
+
+    <button type="submit" (click)="search()"class="btn btn-primary">Search</button>
+  </form>
+
+  <!-- <div>
+    <select [formControl]="selectDoc" >
+        <option *ngFor="let x of docProfiles" value=x.name>
+          <li>{{x.name}}</li>
+          <li>{{x.id}}</li>
+        
+        </option>
+        
+    </select>
+
+  </div> -->
+
+
+ 
+    <p>You selected: {{selectDoc}}</p>
+    
+
+<!-- <div *ngIf="isLoginError">
+  <p>Login Error</p>
+</div> -->
+
+
+
+
+<div class="par"><ul *ngFor="let x of docProfiles">
+  <li>{{x.name}}</li>
+  <li>{{x.channelingCentre}}</li>
+  <li>{{x.specialities}}</li>
+  <li>{{x.qualifications}}</li>
+  <li>{{x._id}}</li>
+
+</ul></div>
+
+<div class="landing-page"><div class="form-appointment"><div class="wpcf7" id="wpcf7-f560-p590-o1"><form action="/landing-page-template-do-not-delete/#wpcf7-f560-p590-o1" method="post" class="wpcf7-form" novalidate="novalidate" _lpchecked="1">
+
+  <div class="group">
+  <div style="width: 48%; float: left;">
+    <input type="text" [formControl]="doctorId" class="form-control" id="id"placeholder="Enter doctorId you want to search"><br>
+    <input type="date" [formControl]="date" class="form-control" id="exampleInputEmail1"placeholder="Enter date you want to"><br>
+    <input type="time" [formControl]="time" class="form-control" id="exampleInputEmail1"placeholder="Enter time you want to search"><br>
+
+
+  <h4>What is the best way to reach you?</h4>
+  <p><span class="wpcf7-form-control-wrap radio-98"><span class="wpcf7-form-control wpcf7-radio"><span class="wpcf7-list-item"><label><input type="radio" name="radio-98" value="Phone">&nbsp;<span class="wpcf7-list-item-label">Phone</span></label></span><span class="wpcf7-list-item"><label><input type="radio" name="radio-98" value="Email">&nbsp;<span class="wpcf7-list-item-label">Email</span></label></span></span></span></p>
+  <h4>Days of the week you are available for appointment:</h4>
+  <p><span class="wpcf7-form-control-wrap checkbox-465"><span class="wpcf7-form-control wpcf7-checkbox"><span class="wpcf7-list-item"><label><input type="checkbox" name="checkbox-465[]" value="Monday">&nbsp;<span class="wpcf7-list-item-label">Monday</span></label></span><span class="wpcf7-list-item"><label><input type="checkbox" name="checkbox-465[]" value="Tuesday">&nbsp;<span class="wpcf7-list-item-label">Tuesday</span></label></span><span class="wpcf7-list-item"><label><input type="checkbox" name="checkbox-465[]" value="Wednesday">&nbsp;<span class="wpcf7-list-item-label">Wednesday</span></label></span><span class="wpcf7-list-item"><label><input type="checkbox" name="checkbox-465[]" value="Thursday">&nbsp;<span class="wpcf7-list-item-label">Thursday</span></label></span><span class="wpcf7-list-item"><label><input type="checkbox" name="checkbox-465[]" value="Friday">&nbsp;<span class="wpcf7-list-item-label">Friday</span></label></span></span></span></p>
+  <h4>Best time of day for your appointment:</h4>
+  <p><span class="wpcf7-form-control-wrap checkbox-246"><span class="wpcf7-form-control wpcf7-checkbox"><span class="wpcf7-list-item"><label><input type="checkbox" name="checkbox-246[]" value="Morning">&nbsp;<span class="wpcf7-list-item-label">Morning</span></label></span><span class="wpcf7-list-item"><label><input type="checkbox" name="checkbox-246[]" value="Afternoon">&nbsp;<span class="wpcf7-list-item-label">Afternoon</span></label></span></span></span></p></div>
+  </div>
+  <div ><input type="submit" (click)="newAppointment()" value="Request My Appointment" class="wpcf7-form-control wpcf7-submit"><img class="ajax-loader" src="http://www.professionalaudiologicalservices.com/wp-content/plugins/contact-form-7/images/ajax-loader.gif" alt="Sending ..." style="visibility: hidden;"></div>
+    <div class="wpcf7-response-output wpcf7-display-none"></div>
+  </form></div></div></div>
+
+
+
